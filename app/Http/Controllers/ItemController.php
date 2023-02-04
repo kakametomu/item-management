@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
+use App\Models\User;
 
 class ItemController extends Controller
 {
@@ -56,5 +57,36 @@ class ItemController extends Controller
         }
 
         return view('item.add');
+    }
+
+    //アイテムを削除する
+    public function ListDelete(Request $request)
+    {
+        //既存のレコードを取得して削除する
+        $items = Item::find($request->id);
+        $items->delete();
+
+        return redirect('/items');
+    }
+
+    //ユーザーを削除する
+    public function UserDelete(Request $request)
+    {
+        //既存のレコードを取得して削除する
+        $users = User::find($request->id);
+        $users->delete();
+
+        return redirect('/userslist');
+    }
+
+    //追加画面へ変異
+    public function userslist()
+    {
+        // 商品一覧取得
+        $users = User::all();
+
+        /* return view('user/userslist', compact('items')); */
+
+        return view('user/userslist')->with(['users' => $users,]);
     }
 }

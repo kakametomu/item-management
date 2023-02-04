@@ -28,6 +28,7 @@
                                 <th>名前</th>
                                 <th>種別</th>
                                 <th>詳細</th>
+                                <th>削除</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,6 +38,7 @@
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->type }}</td>
                                     <td>{{ $item->detail }}</td>
+                                    <td><a href="/ListDelete/{{$item->id}}" class="btn btn-default">削除</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

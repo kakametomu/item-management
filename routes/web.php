@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,11 @@ Route::prefix('items')->group(function () {
     Route::get('/add', [App\Http\Controllers\ItemController::class, 'add']);
     Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
 });
+
+//商品削除
+Route::get('/ListDelete/{id}',[ItemController::class, 'ListDelete']);
+//ユーザー削除
+Route::get('/USerDelete/{id}',[ItemController::class, 'UserDelete']);
+
+//画面追加
+Route::get('userslist',[\App\Http\Controllers\ItemController::class,'userslist']);
