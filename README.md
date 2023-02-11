@@ -1,35 +1,36 @@
-## 商品管理システム
+# 商品管理システム
 
-### 環境構築手順
+## 概要
+このシステムでは、店舗で扱う商品の在庫管理を行うことができます。
 
-* Gitクローン
-* .env.example をコピーして .env を作成
-* MySQLかPostgreSQLのデータベース作成（名前：item_management）  
-  ローカルでMAMPを使用しているのであれば、MySQL推奨
-* .env にデータベース接続情報追加
-```
-例）
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=item_management
-DB_USERNAME=root
-DB_PASSWORD=root
-```
-* APP_KEY生成
-```
-$ php artisan key:generate
-```
-* Composerインストール
-```
-$ composer install
-```
-* フロント環境構築
-```
-$ npm install
-$ npm run dev
-```
-* マイグレーション
-```
-$ php artisan migrate
-```
+商品の新規登録、削除ができ、各商品の在庫を調整することができます。
+
+## 主な機能
+- ログイン、ログアウト機能
+- 商品一覧画面
+- 商品の新規登録、削除機能
+- ユーザー一覧機能
+- ユーザー削除機能 
+
+## 開発環境
+'''
+
+PHP　8.0.19
+
+MariaDB　10.4.24
+
+Laravel　8.83.3
+
+'''
+
+## システム閲覧
+[アプリケーションページへ](https://item-manegement-kaka.herokuapp.com/login)
+
+### テストアカウント情報
+'''
+
+メールアドレス　：　user@test
+
+パスワード　：　12345678
+
+'''
