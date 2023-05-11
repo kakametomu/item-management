@@ -35,3 +35,5 @@ Route::get('/USerDelete/{id}',[ItemController::class, 'UserDelete']);
 
 //画面追加
 Route::get('userslist',[\App\Http\Controllers\ItemController::class,'userslist']);
+
+Route::get('/items/search', [ItemController::class, 'search'])->name('items.search');

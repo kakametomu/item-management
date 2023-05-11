@@ -21,6 +21,14 @@
                     </div>
                 </div>
                 <div class="card-body table-responsive p-0">
+                    <form action="{{ route('items.search') }}" method="GET">
+                        <div class="input-group">
+                            <input type="text" name="search" class="form-control" placeholder="商品名を入力してください">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default">検索</button>
+                            </span>
+                        </div>
+                    </form>
                     <table class="table table-hover text-nowrap">
                         <thead>
                             <tr>
@@ -33,13 +41,13 @@
                         </thead>
                         <tbody>
                             @foreach ($items as $item)
-                                <tr>
-                                    <td>{{ $item->id }}</td>
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->type }}</td>
-                                    <td>{{ $item->detail }}</td>
-                                    <td><a href="/ListDelete/{{$item->id}}" class="btn btn-default">削除</a></td>
-                                </tr>
+                            <tr>
+                                <td>{{ $item->id }}</td>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->type }}</td>
+                                <td>{{ $item->detail }}</td>
+                                <td><a href="/ListDelete/{{$item->id}}" class="btn btn-default">削除</a></td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -47,10 +55,5 @@
             </div>
         </div>
     </div>
-@stop
 
-@section('css')
-@stop
-
-@section('js')
 @stop

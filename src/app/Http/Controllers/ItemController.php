@@ -89,4 +89,11 @@ class ItemController extends Controller
 
         return view('user/userslist')->with(['users' => $users,]);
     }
+
+    //検索機能
+    public function search(Request $request)
+{
+    $items = Item::where('name', 'LIKE', "%{$request->search}%")->get();return view('item.index', compact('items'));
+    return view('item.index', compact('items'));
+}
 }
